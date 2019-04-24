@@ -1,0 +1,10 @@
+${AnsiColor.CYAN}
+      _     _ _
+     | |   (_) |
+  ___| |__  _| |_
+ / __| '_ \| | __|
+ \__ \ | | | | |_
+ |___/_| |_|_|\__|
+
+${AnsiColor.BRIGHT_YELLOW}
+Project (version:${application.version})      Spring-Boot ${spring-boot.version}

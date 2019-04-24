@@ -1,0 +1,44 @@
+.classpath
+!/.project
+.project
+.settings
+target
+test-output/
+bin/
+*.ipr
+*.iml
+*.iws
+*.orig
+.idea/
+.DS_Store
+.idea
+overlays/
+pom.xml.versionsBackup
+build.xml
+*.log
+rebel.xml
+**/.checkstyle
+*.log.gz
+node_modules/
+package.json
+gruntfile.js
+.gradle
+/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+build/
+MANIFEST.MF
+
+classes/
+*.bin
+out
