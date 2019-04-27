@@ -20,15 +20,17 @@ public class OkHttpUtils implements Cloneable {
     private static final int TIME_OUT = 20;
     private static OkHttpClient client;
 
-    // 请求类型
+    /**
+     * 请求类型
+     */
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
 
-    public String doGet(String url) throws Exception {
+    public static String doGet(String url) throws Exception {
         Request request = new Request.Builder()
                 .url(url)
                 .build();
-        try (Response response = client.newCall(request).execute()) {
+        try (Response response = getInstance().newCall(request).execute()) {
             if (!response.isSuccessful()) {
                 throw new IOException("Unexpected code " + response);
             }
@@ -40,11 +42,11 @@ public class OkHttpUtils implements Cloneable {
         }
     }
 
-    public void doAsyncGet(String url) throws Exception {
+    public static void doAsyncGet(String url) throws Exception {
         Request request = new Request.Builder()
                 .url("http://publicobject.com/helloworld.txt")
                 .build();
-        client.newCall(request).enqueue(new Callback() {
+        getInstance().newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
@@ -67,13 +69,13 @@ public class OkHttpUtils implements Cloneable {
         });
     }
 
-    public String doPost(String url, String json) throws Exception {
+    public static String doPost(String url, String json) throws Exception {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
                 .build();
-        Response response = client.newCall(request).execute();
+        Response response = getInstance().newCall(request).execute();
         if (response.isSuccessful()) {
             return response.body().string();
         } else {
