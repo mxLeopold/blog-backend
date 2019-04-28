@@ -1,4 +1,4 @@
-package wiki.soma.utils;
+package wiki.soma.common.utils;
 
 
 import java.io.IOException;

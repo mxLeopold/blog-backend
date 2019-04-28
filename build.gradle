@@ -1,3 +1,15 @@
+def env = System.getProperty("env") ?: "dev"
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = [
+                    "src/main/resources/env-$env"
+            ]
+        }
+    }
+}
+
 // allprojects里是项目本身需要的依赖，
 // 比如我现在要依赖我自己maven库的toastutils库，
 // 那么我应该将maven {url ‘https://dl.bintray.com/calvinning/maven‘}写在这里，而不是buildscript中，不然找不到。
@@ -84,6 +96,8 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.14.1'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.57'
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.0.1'
+    compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.2.10'
+    compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.16'
     compileOnly group: 'mysql', name: 'mysql-connector-java'
     compileOnly 'org.projectlombok:lombok:1.18.6'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
