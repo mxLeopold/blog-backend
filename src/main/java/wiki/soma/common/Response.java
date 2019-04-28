@@ -1,6 +1,7 @@
 package wiki.soma.common;
 
 import com.alibaba.fastjson.JSONObject;
+import wiki.soma.common.constants.ApiConstants;
 
 import java.util.HashMap;
 import java.util.List;

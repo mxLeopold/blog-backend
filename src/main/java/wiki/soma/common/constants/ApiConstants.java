@@ -1,4 +1,4 @@
-package wiki.soma.common;
+package wiki.soma.common.constants;
 
 /**
  * 常量

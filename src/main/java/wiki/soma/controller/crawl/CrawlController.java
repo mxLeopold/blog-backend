@@ -1,10 +1,9 @@
 package wiki.soma.controller.crawl;
 
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import wiki.soma.common.CrawlConstants;
+import wiki.soma.common.constants.CrawlConstants;
 import wiki.soma.utils.OkHttpUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2019年4月27日 23:20:47
  */
 @Slf4j
-@Log
 @RestController
 public class CrawlController {
 
